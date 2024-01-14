@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* html {
+  background-color: #212020;
+  font-family: 'Satoshi-Variable';
+  @apply text-gray-200;
+  height: 100%;
+  overflow-y: scroll;
+} */
+
+/* h1 {
+  @apply text-3xl font-medium text-white
+}
+
+h2 {
+  @apply text-2xl font-medium text-white
+}
+
+h3 {
+  @apply text-2xl font-medium text-gray-100
+}
+
+h4 {
+  @apply text-xl text-gray-100
+} */
+
+/* @font-face {
+  font-family: 'Satoshi-Variable';
+  src: url('./Satoshi-Variable.ttf') format('truetype');
+} */
+
+
+/* Clerk */
+
+.cl-internal-b3fm6y {
+  display: none;
+}
+
+.cl-internal-wkkub3 {
+  display: none;
+}

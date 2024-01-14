@@ -1,0 +1,55 @@
+{
+  "name": "bun-express-remix-template",
+  "private": true,
+  "sideEffects": false,
+  "type": "module",
+  "scripts": {
+    "build": "NODE_ENV=production remix build",
+    "dev": "remix dev --manual -c \"bun --watch run src/index.ts\"",
+    "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
+    "start": "NODE_ENV=production bun src/index.ts",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@elysiajs/static": "^0.8.1",
+    "@remix-run/css-bundle": "^2.4.1",
+    "@remix-run/node": "^2.4.1",
+    "@remix-run/react": "^2.4.1",
+    "@remix-run/server-runtime": "^2.5.0",
+    "compression": "^1.7.4",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.3.1",
+    "elysia": "^0.8.9",
+    "isbot": "^3.6.8",
+    "pg": "^8.11.3",
+    "pino": "^8.17.2",
+    "pino-pretty": "^10.3.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "source-map-support": "^0.5.21",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "^2.4.1",
+    "@types/compression": "^1.7.2",
+    "@types/cors": "^2.8.17",
+    "@types/pg": "^8.10.9",
+    "@types/react": "^18.2.20",
+    "@types/react-dom": "^18.2.7",
+    "@types/source-map-support": "^0.5.6",
+    "@types/uuid": "^9.0.7",
+    "@typescript-eslint/eslint-plugin": "^6.7.4",
+    "bun-types": "^1.0.20",
+    "eslint": "^8.38.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.1.6"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
