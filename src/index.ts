@@ -75,6 +75,8 @@ const app = new Elysia()
 
 app.get("/hc", (c) => {
   return new Response("ok")
+}, {
+  type: 'text' // force set the type of the request body
 })
 
 // Send everything else to remix
