@@ -109,9 +109,17 @@ if (process.env.NODE_ENV === "development") {
   broadcastDevReady(build as any)
 }
 
-app.listen(listenPort, () => {
-  logger.info(`API listening on port ${listenPort}`)
+// app.listen(listenPort, () => {
+//   logger.info(`API listening on port ${listenPort}`)
+// })
+
+Bun.serve({
+  port: process.env.PORT || "8080",
+  fetch: (req, server) => {
+    return app.handle(req)
+  }
 })
+logger.info(`API listening on port ${listenPort}`)
 
 const signals = {
   SIGHUP: 1,
@@ -130,7 +138,7 @@ Object.keys(signals).forEach((signal) => {
     logger.info(`Received signal ${signal}, shutting down...`)
     logger.info("exiting...")
     logger.flush() // pino actually fails to flush, even with awaiting on a callback
-    await app.stop()
+    // app.stop()
     process.exit(0)
   })
 })
