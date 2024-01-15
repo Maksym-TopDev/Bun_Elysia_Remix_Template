@@ -1,4 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
+import { useEffect } from "react";
 
 export const meta: MetaFunction = () => {
   return [
@@ -8,6 +9,14 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
+
+  useEffect(() => {
+    const ws = new WebSocket("ws://localhost:8080/ws")
+    setTimeout(() => {
+      ws.send("hey")
+    }, 1000)
+  }, [])
+
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
       <h1 className="font-bold">Welcome to Remix</h1>

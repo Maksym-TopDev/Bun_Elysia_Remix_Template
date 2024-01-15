@@ -79,6 +79,15 @@ app.get("/hc", (c) => {
   type: 'text' // force set the type of the request body
 })
 
+app.ws("/ws", {
+  message(ws, message) {
+    ws.data.logger.info({message}, "got message")
+  },
+  open(ws) {
+    ws.data.logger.info("ws opened")
+  },
+})
+
 // Send everything else to remix
 app.mount(
   "/",
