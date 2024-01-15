@@ -128,8 +128,8 @@ Object.keys(signals).forEach((signal) => {
     stopping = true
     logger.info(`Received signal ${signal}, shutting down...`)
     logger.info("exiting...")
-    await app.stop()
     logger.flush() // pino actually fails to flush, even with awaiting on a callback
+    await app.stop()
     process.exit(0)
   })
 })
