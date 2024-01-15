@@ -35,6 +35,7 @@ const app = new Elysia()
       }),
     }
   })
+  .state("counter", 0)
   .use(
     staticPlugin({ // serve remix public repo if anything matches
       prefix: "/",
@@ -74,9 +75,11 @@ const app = new Elysia()
   })
 
 app.get("/hc", (c) => {
+  c.store.counter++
   // return new Response("ok")
   return {
-    msg: 'ok'
+    msg: 'ok',
+    counter: c.store.counter
   }
 }, {
   type: 'text' // force set the type of the request body
