@@ -74,7 +74,10 @@ const app = new Elysia()
   })
 
 app.get("/hc", (c) => {
-  return new Response("ok")
+  // return new Response("ok")
+  return {
+    msg: 'ok'
+  }
 }, {
   type: 'text' // force set the type of the request body
 })
