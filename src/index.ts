@@ -109,8 +109,9 @@ if (process.env.NODE_ENV === "development") {
   broadcastDevReady(build as any)
 }
 
-app.listen(listenPort)
-logger.info(`API listening on port ${listenPort}`)
+app.listen(listenPort, () => {
+  logger.info(`API listening on port ${listenPort}`)
+})
 
 const signals = {
   SIGHUP: 1,
